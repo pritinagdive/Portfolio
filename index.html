@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Priti Nagdive - Computer Science graduate student and Data Analyst">
+    <!-- Simplified font imports -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Chart.js for Skills Visualization -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <link rel="stylesheet" href="style.css">
+    <title>Priti Nagdive - Portfolio</title>
+    <style>
+      /* Mobile Navigation - FIXED with proper mobile menu functionality */
+      @media (max-width: 1100px) {
+        header {
+          padding: 2rem 4%;
+          height: auto;
+          width: 100vw; /* Allow the header to adjust its height */
+        }
+        
+        .logo {
+          font-size: 2.2rem; /* Even smaller on mobile */
+          margin-right: 0; /* Remove margin on mobile */
+        }
+        
+        .nav-toggle {
+          display: block;
+          z-index: 100; /* Increase z-index to ensure it stays on top */
+          cursor: pointer;
+          padding: 0.5rem;
+          border-radius: 4px;
+          transition: background-color 0.3s;
+        }
+        
+        .nav-toggle:hover {
+          background-color: rgba(247, 165, 186, 0.1);
+        }
+        
+        nav {
+          position: fixed;
+          top: -100vh; /* Start completely off-screen */
+          left: 0;
+          width: 100%;
+          height: auto; /* Allow the nav to expand as needed */
+          background-color: rgba(255, 255, 255, 0.98); /* Slightly more opaque */
+          backdrop-filter: blur(10px);
+          padding: 2rem 0;
+          transition: top 0.4s ease; /* Slightly faster transition */
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          z-index: 99; /* Below the toggle but above other content */
+          box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+          overflow-y: auto; /* In case there are many items */
+          max-height: 80vh; /* Limit the height */
+        }
+        
+        nav.active {
+          top: 7rem; /* Position below header - adjusted to match header height */
+        }
+        
+        nav a {
+          margin: 1.2rem 0;
+          padding: 0.8rem 2rem;
+          display: block;
+          text-align: center;
+          width: 80%; /* Not full width to look better */
+          font-size: 1.8rem; /* Slightly larger for better touch targets */
+          border-radius: 2rem; /* Rounded corners */
+          transition: all 0.3s;
+        }
+        
+        nav a:hover {
+          background-color: rgba(247, 165, 186, 0.1);
+          transform: translateX(5px);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Single Audio Element -->
+    <audio id="clickSound" preload="auto">
+      <source src="sound.wav" type="audio/wav">
+    </audio>
+    
+    <header>
+      <a href="#" class="logo sound-element">Priti Nagdive</a>
+      <!-- Added mobile menu toggle in HTML instead of JS -->
+      <div class="nav-toggle sound-element">
+        <i class="fas fa-bars"></i>
+      </div>
+      <nav>
+        <a href="#home" class="active sound-element">Home</a>
+        <a href="#about" class="sound-element">About</a>
+        <a href="#education" class="sound-element">Education</a>
+        <a href="#experience" class="sound-element">Experience</a>
+        <a href="#projects" class="sound-element">Projects</a>
+        <a href="#skills" class="sound-element">Skills</a>
+        <a href="#certifications" class="sound-element">Certifications</a>
+        <a href="#hobbies" class="sound-element">Hobbies</a>
+        <a href="#contact" class="sound-element">Contact</a>
+      </nav>
+    </header>
+    
+    <!-- Updated Home Section with boxed description -->
+<section class="home" id="home">
+  <div class="home-img" data-aos="fade-right" data-aos-duration="1000">
+    <img src="my.jpg" alt="Priti Nagdive">
+  </div>
+  <div class="home-content" data-aos="fade-left" data-aos-duration="1000">
+    <h1>Hello, It's <span>Priti</span></h1>
+    <!-- Fixed typing text container with increased height -->
+    <h3 class="typing-text">I'm a <span id="changing-text"></span></h3>
+    <!-- Added description box -->
+    <div class="description-box">
+      <p>I am a graduate student at Stevens Institute of Technology pursuing my MSc in Computer Science, with professional experience as a Data Analyst specializing in Python, SQL, and machine learning technologies.</p>
+      <!-- Added More About Me button with pastel styling -->
+      <a href="#about" class="more-about-btn sound-element">More About Me</a>
+    </div>
+    <div class="social-icons">
+      <a href="https://www.linkedin.com/in/priti-nagdive/" target="_blank" rel="noopener noreferrer" class="sound-element" aria-label="LinkedIn" onclick="window.open('https://www.linkedin.com/in/priti-nagdive/', '_blank'); return false;"><i class="fab fa-linkedin"></i></a>
+      <a href="https://github.com/pritinagdive" target="_blank" rel="noopener noreferrer" class="sound-element" aria-label="GitHub"><i class="fab fa-github"></i></a>
+      <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" class="sound-element" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+      <a href="https://www.instagram.com/pritu_nagdive_/" target="_blank" rel="noopener noreferrer" class="sound-element" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+    </div>
+    <a href="Priti_CV.pdf" class="btn sound-element" download>Download CV</a>
+  </div>
+</section>
+    
+    <!-- About Section with Updated Icons -->
+<section class="about" id="about">
+  <h2 class="heading" data-aos="fade-down">About <span>Me</span></h2>
+  <div class="about-content" data-aos="fade-up">
+    <p>My journey with technology started back home in India, where I earned my Bachelor's in Information Technology from Somaiya University. That's where I discovered my love for data analysis, data engineering, and software development—basically, anything that lets me turn raw data into something meaningful.</p>
+    
+    <p>Wanting to push myself further, I took a big leap and moved to the U.S. to pursue my Master's in Computer Science at Stevens Institute of Technology. Along the way, I've worked as a Data Analyst, diving deep into Python, MySQL, and machine learning, solving real-world problems, and collaborating with teams to make sense of complex data.</p>
+    
+    <p>I've built projects that I'm really proud of like a clothing recommendation system and a stock market prediction model because I love creating solutions that actually make an impact. Now based in Union City, NJ, I'm constantly learning, growing, and looking for exciting opportunities to blend technology, creativity, and problem-solving to make a difference.</p>
+    
+    <div class="contact-info" style="display: none !important;">
+      <!-- Your contact links remain unchanged -->
+    </div>
+  </div>
+</section>
+    
+    <!-- Education Section -->
+    <section class="education" id="education">
+      <h2 class="heading" data-aos="fade-down">My <span>Education</span></h2>
+      <div class="education-container">
+        <div class="education-box sound-element" data-aos="fade-right" data-aos-delay="100">
+          <h3>Stevens Institute of Technology</h3>
+          <h4>MSc in Computer Science</h4>
+          <p>Sept 2024 – May 2026</p>
+          <p>GPA: 3.55/4</p>
+        </div>
+        <div class="education-box sound-element" data-aos="fade-left" data-aos-delay="200">
+          <h3>Somaiya University</h3>
+          <h4>BSc in Information Technology</h4>
+          <p>July 2020 – April 2023</p>
+          <p>CGPA: 8.44/10</p>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Experience Section -->
+    <section class="experience" id="experience">
+      <h2 class="heading" data-aos="fade-down">Work <span>Experience</span></h2>
+      <div class="experience-container">
+        <div class="experience-box sound-element" data-aos="fade-up" data-aos-delay="100">
+          <h3>Associate Data Analyst</h3>
+          <h4>Delta System</h4>
+          <p class="date">Dec 2023 – July 2024</p>
+          <ul>
+            <li>Gathered, cleaned, and analyzed data using MySQL and Python libraries such as NumPy and SciPy.</li>
+            <li>Created visualizations to communicate trends and insights.</li>
+            <li>Compiled reports to support decision-making processes.</li>
+            <li>Collaborated with cross-functional teams to continuously improve data processes and help the organization achieve its objectives.</li>
+          </ul>
+        </div>
+        <div class="experience-box sound-element" data-aos="fade-up" data-aos-delay="200">
+          <h3>Database Management and Analysis Intern</h3>
+          <h4>Delta System</h4>
+          <p class="date">June 2023 – Oct 2023</p>
+          <ul>
+            <li>Utilized MySQL for data storage and organization.</li>
+            <li>Employed Python libraries like Matplotlib, Seaborn, NumPy, and SciPy for insightful analysis.</li>
+            <li>Identified patterns and trends to aid decision-making through data insights.</li>
+            <li>Managed data entry and ensured accuracy in database updates.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    
+   <!-- Projects Section - Simplified without flip cards -->
+<section class="projects" id="projects">
+  <h2 class="heading" data-aos="fade-down">My <span>Projects</span></h2>
+  <div class="projects-container">
+    <!-- Project 1 -->
+    <div class="project-box sound-element" data-aos="fade-up" data-aos-delay="100">
+      <h3>Stock Market Predictions From News</h3>
+      <p class="date">2024</p>
+      <p>This project develops a model to predict stock price movements using NLP to analyze news headlines and their sentiment. The model combines sentiment analysis and fine tuning Bert & Fin-Bert model with market data to forecast stock trends, training on a dataset for later deployment with real-time news data.</p>
+      <p class="project-tools"><strong>Tools:</strong> NLP, Bert, FinBert, LSTM, Hugging Face, Pandas, NumPy, Live News API</p>
+      <div class="project-links">
+        <a href="https://github.com/pritinagdive" target="_blank" rel="noopener noreferrer" class="sound-element">GitHub</a>
+      </div>
+    </div>
+    
+    <!-- Project 2 -->
+    <div class="project-box sound-element" data-aos="fade-up" data-aos-delay="200">
+      <h3>Clothing Recommendation System</h3>
+      <p class="date">2023</p>
+      <p>Developed a clothing recommendation system with a user interface for capturing clothes pictures and inputting details. An intelligent system with a database for storing data, and an algorithm for recommending the best combination based on color and dress style preferences.</p>
+      <p class="project-tools"><strong>Tools:</strong> Python, MySQL, OpenCV, NumPy, Scikit-learn</p>
+      <div class="project-links">
+        <a href="https://github.com/pritinagdive" target="_blank" rel="noopener noreferrer" class="sound-element">GitHub</a>
+      </div>
+    </div>
+    
+    <!-- Project 3 -->
+    <div class="project-box sound-element" data-aos="fade-up" data-aos-delay="300">
+      <h3>Somaiya Memories</h3>
+      <p class="date">2022</p>
+      <p>Website for the College named Somaiya Memories where students can share their memories of specific locations. An interactive platform where visitors can view location-based memories by scanning a QR Code at those locations, creating a virtual tour of experiences.</p>
+      <p class="project-tools"><strong>Tools:</strong> HTML, MySQL, QR Code library</p>
+      <div class="project-links">
+        <a href="https://github.com/pritinagdive" target="_blank" rel="noopener noreferrer" class="sound-element">GitHub</a>
+      </div>
+    </div>
+  </div>
+</section>
+    
+    <!-- Skills Section with Chart Visualization -->
+    <section class="skills" id="skills">
+      <h2 class="heading" data-aos="fade-down">My <span>Skills</span></h2>
+      
+      <!-- Skills Chart Visualization -->
+      <div class="skills-chart-container" data-aos="zoom-in">
+        <canvas id="skillsChart"></canvas>
+      </div>
+      
+      <div class="skills-container">
+        <div class="skills-box sound-element" data-aos="fade-up" data-aos-delay="100">
+          <h3>Machine Learning</h3>
+          <p>Scikit-learn, TensorFlow, BERT, LSTM</p>
+        </div>
+        <div class="skills-box sound-element" data-aos="fade-up" data-aos-delay="150">
+          <h3>Data Analysis Tools</h3>
+          <p>NumPy, Pandas, Matplotlib, Seaborn</p>
+        </div>
+        <div class="skills-box sound-element" data-aos="fade-up" data-aos-delay="200">
+          <h3>Programming Languages</h3>
+          <p>Python, R, Java, C</p>
+        </div>
+        <div class="skills-box sound-element" data-aos="fade-up" data-aos-delay="250">
+          <h3>Cloud and Networking</h3>
+          <p>Microsoft Azure, Computer Networking</p>
+        </div>
+        <div class="skills-box sound-element" data-aos="fade-up" data-aos-delay="300">
+          <h3>Database Management</h3>
+          <p>MySQL, PostgreSQL</p>
+        </div>
+        <div class="skills-box sound-element" data-aos="fade-up" data-aos-delay="350">
+          <h3>Web Technologies</h3>
+          <p>HTML5, CSS3, PHP, JavaScript</p>
+        </div>
+        <div class="skills-box sound-element" data-aos="fade-up" data-aos-delay="400">
+          <h3>Microsoft Office 365</h3>
+          <p>Advanced Excel (VBA, Pivot Tables), Access, PowerPoint, Word</p>
+        </div>
+        <div class="skills-box sound-element" data-aos="fade-up" data-aos-delay="450">
+          <h3>Communication and Teamwork</h3>
+          <p>Workshop facilitation, event coordination, office support</p>
+        </div>
+        <div class="skills-box sound-element" data-aos="fade-up" data-aos-delay="500">
+          <h3>Administrative and Clerical</h3>
+          <p>File management, report writing, documentation, organizing office events</p>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Certifications Section -->
+    <section class="certifications" id="certifications">
+      <h2 class="heading" data-aos="fade-down">My <span>Certifications</span></h2>
+      <div class="certifications-container">
+        <div class="certification-box sound-element" data-aos="zoom-in" data-aos-delay="100">
+          <h3>Python for Data Science, AI and Development</h3>
+        </div>
+        <div class="certification-box sound-element" data-aos="zoom-in" data-aos-delay="200">
+          <h3>Data Analyst Foundation By Google (Coursera)</h3>
+        </div>
+        <div class="certification-box sound-element" data-aos="zoom-in" data-aos-delay="300">
+          <h3>Power BI By SkillUp</h3>
+        </div>
+        <div class="certification-box sound-element" data-aos="zoom-in" data-aos-delay="400">
+          <h3>Microsoft Azure Data Fundamental DB900 By Microsoft</h3>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Hobbies Section -->
+    <section class="hobbies" id="hobbies">
+      <h2 class="heading" data-aos="fade-down">My <span>Hobbies</span> & Activities</h2>
+      <div class="hobbies-container">
+        <div class="hobby-box sound-element" data-aos="zoom-in" data-aos-delay="100">
+          <i class="fas fa-users" aria-hidden="true"></i>
+          <h3>Volunteering</h3>
+          <p>Organized the IIEC 2023 Departmental Fest as a volunteer.</p>
+        </div>
+        <div class="hobby-box sound-element" data-aos="zoom-in" data-aos-delay="200">
+          <i class="fas fa-compact-disc" aria-hidden="true"></i>
+          <h3>Dancing</h3>
+          <p>Participated in multiple dance competitions.</p>
+        </div>
+        <div class="hobby-box sound-element" data-aos="zoom-in" data-aos-delay="300">
+          <i class="fas fa-running" aria-hidden="true"></i>
+          <h3>Sports</h3>
+          <p>Led the school sports team as captain from 2016 to 2018.</p>
+        </div>
+        <div class="hobby-box sound-element" data-aos="zoom-in" data-aos-delay="400">
+          <i class="fas fa-palette" aria-hidden="true"></i>
+          <h3>Art</h3>
+          <p>Participated in both elementary and intermediate drawing competitions.</p>
+        </div>
+        <div class="hobby-box sound-element" data-aos="zoom-in" data-aos-delay="500">
+          <i class="fas fa-calendar-check" aria-hidden="true"></i>
+          <h3>Event Management</h3>
+          <p>Assisted with organizing and supporting various office events.</p>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+      <h2 class="heading" data-aos="fade-down">Contact <span>Me</span></h2>
+      <div class="contact-container" style="align-items: center;">
+        <div class="contact-icons" data-aos="fade-right" data-aos-delay="100">
+          <div style="display: flex; flex-direction: row; gap:40px;">
+            <a href="https://www.linkedin.com/in/priti-nagdive/" target="_blank" rel="noopener noreferrer" class="contact-icon sound-element" data-sound-type="contact" aria-label="Connect with Me" onclick="window.open('https://www.linkedin.com/in/priti-nagdive/', '_blank'); return false;">
+              <i class="fab fa-linkedin" aria-hidden="true"></i>
+              <span>Connect with Me</span>
+            </a>
+            <i class="fab fa-linkedin" aria-hidden="true"></i>
+            <span>Connect with Me</span>
+          </a>
+          <a href="mailto:pritinagdive2002@gmail.com" class="contact-icon sound-element" data-sound-type="contact" aria-label="Email Me">
+            <i class="fas fa-envelope" aria-hidden="true"></i>
+            <span>Email Me</span>
+          </a>
+        </div>
+        <div style="display: flex; flex-direction: row; gap:40px;">
+          <a href="tel:+16466782651" class="contact-icon sound-element" data-sound-type="contact" aria-label="Call Me">
+            <i class="fas fa-phone" aria-hidden="true"></i>
+            <span>Call Me</span>
+          </a>
+          <a href="https://maps.google.com/?q=Union+City,+New+Jersey" target="_blank" rel="noopener noreferrer" class="contact-icon sound-element" data-sound-type="contact" aria-label="Find Me">
+            <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+            <span>Find Me</span>
+          </a>
+        </div>
+        </div>
+        <div class="contact-form" data-aos="fade-left" data-aos-delay="100">
+          <form id="contactForm" action="#" method="POST">
+            <div class="input-box">
+              <label for="fullName" class="sr-only">Full Name</label>
+              <input type="text" id="fullName" name="fullName" placeholder="Full Name" class="sound-element" required>
+            </div>
+            <div class="input-box">
+              <label for="email" class="sr-only">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="Email Address" class="sound-element" required>
+            </div>
+            <div class="input-box">
+              <label for="subject" class="sr-only">Subject</label>
+              <input type="text" id="subject" name="subject" placeholder="Subject" class="sound-element" required>
+            </div>
+            <div class="input-box">
+              <label for="message" class="sr-only">Your Message</label>
+              <textarea id="message" name="message" placeholder="Your Message" class="sound-element" required></textarea>
+            </div>
+            <div class="btn-box">
+              <button type="submit" class="btn sound-element">Send Message</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+      <div class="footer-content">
+        <p>&copy; 2025 Priti Nagdive. All Rights Reserved.</p>
+        <div class="social-icons">
+          <a href="https://www.linkedin.com/in/priti-nagdive/" target="_blank" rel="noopener noreferrer" class="sound-element" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="https://github.com/pritinagdive" target="_blank" rel="noopener noreferrer" class="sound-element" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" class="sound-element" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+          <a href="https://www.instagram.com/pritu_nagdive_/" target="_blank" rel="noopener noreferrer" class="sound-element" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+    </footer>
+    
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Fixed JavaScript with mobile menu functionality -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        // Initialize AOS animation library
+        AOS.init({
+          duration: 800,
+          easing: 'ease-in-out',
+          once: true
+        });
+        
+        // Create an AudioContext for more control over sound effects
+        const AudioContext = window.AudioContext || window.webkitAudioContext;
+        const audioContext = new AudioContext();
+        
+        // Sound effect configuration - using values in the 20-30 range as requested
+        const soundVolume = 0.25; // 25% volume (in the 20-30% range)
+        const soundDuration = 25; // 25ms duration (in the 20-30ms range)
+        
+        // Function to create a variety of sound effects
+        function createSoundEffect(type) {
+          // Create oscillator and gain nodes
+          const oscillator = audioContext.createOscillator();
+          const gainNode = audioContext.createGain();
+          
+          // Configure based on interaction type
+          switch(type) {
+            case 'button':
+              oscillator.type = 'sine';
+              oscillator.frequency.value = 880;
+              break;
+            case 'nav':
+              oscillator.type = 'sine';
+              oscillator.frequency.value = 660;
+              break;
+            case 'social':
+              oscillator.type = 'triangle';
+              oscillator.frequency.value = 550;
+              break;
+            case 'contact':
+              oscillator.type = 'sine';
+              oscillator.frequency.value = 440;
+              break;
+            case 'form':
+              oscillator.type = 'sine';
+              oscillator.frequency.value = 330;
+              break;
+            case 'submit':
+              oscillator.type = 'sawtooth';
+              oscillator.frequency.value = 990;
+              break;
+            default:
+              oscillator.type = 'sine';
+              oscillator.frequency.value = 440;
+          }
+          
+          // Set volume to be in the 20-30 range
+          gainNode.gain.value = soundVolume;
+          
+          // Connect nodes
+          oscillator.connect(gainNode);
+          gainNode.connect(audioContext.destination);
+          
+          // Play the sound
+          oscillator.start();
+          
+          // Stop after the duration (in the 20-30ms range)
+          setTimeout(() => {
+            oscillator.stop();
+            oscillator.disconnect();
+            gainNode.disconnect();
+          }, soundDuration);
+        }
+        
+        // IMPORTANT CHANGE: Remove cooldown to ensure sound plays on every click
+        window.playSound = function(type = 'default'){
+          // Resume AudioContext if it's suspended (browsers require user interaction)
+          if (audioContext.state === 'suspended') {
+            audioContext.resume();
+          }
+          
+          // Play the sound directly using Web Audio API for consistent behavior
+          createSoundEffect(type);
+        };
+        
+        // Add sound effects to all elements with sound-element class
+        const soundElements = document.querySelectorAll('.sound-element');
+        soundElements.forEach(element => {
+          element.addEventListener('click', function() {
+            // Check if element has a specific sound type attribute
+            const soundType = this.getAttribute('data-sound-type') || null;
+            
+            if (soundType) {
+              // Use the specified sound type if available
+              playSound(soundType);
+            } else {
+              // Determine element type for appropriate sound
+              if (this.classList.contains('btn')) {
+                playSound('button');
+              } else if (this.closest('nav')) {
+                playSound('nav');
+              } else if (this.closest('.social-icons')) {
+                playSound('social');
+              } else if (this.closest('.contact-info') || this.classList.contains('info-item') || this.classList.contains('contact-icon')) {
+                playSound('contact');
+              } else if (this.tagName === 'INPUT' || this.tagName === 'TEXTAREA') {
+                playSound('form');
+              } else if (this.tagName === 'BUTTON' && this.type === 'submit') {
+                playSound('submit');
+              } else {
+                playSound('default');
+              }
+            }
+          });
+        });
+        
+        // Navigation links 
+        const navLinks = document.querySelectorAll('nav a');
+        navLinks.forEach(anchor => {
+          anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // IMPORTANT: Always play sound on navigation clicks
+            playSound('nav');
+            
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            
+            if (targetElement) {
+              // Smooth scroll to target
+              targetElement.scrollIntoView({
+                behavior: 'smooth'
+              });
+              
+              // Update active link
+              navLinks.forEach(link => link.classList.remove('active'));
+              this.classList.add('active');
+              
+              // Close mobile menu if open
+              const nav = document.querySelector("nav");
+              if (nav && nav.classList.contains("active")) {
+                nav.classList.remove("active");
+              }
+            }
+          });
+        });
+        
+        // FIXED: Handle nav toggle for mobile - improved toggle functionality
+        const navToggle = document.querySelector(".nav-toggle");
+        const nav = document.querySelector("nav");
+        
+        if (navToggle && nav) {
+          // Add a click event listener to the toggle button
+          navToggle.addEventListener("click", function(e) {
+            e.preventDefault(); // Prevent default action
+            e.stopPropagation(); // Stop event bubbling
+            
+            // Toggle the active class on the nav element
+            nav.classList.toggle("active");
+            
+            // Play the navigation sound
+            playSound('nav');
+            
+            // Log for debugging
+            console.log("Nav toggle clicked, nav active:", nav.classList.contains("active"));
+          });
+          
+          // Close menu when clicking outside
+          document.addEventListener("click", function(e) {
+            // If the click is outside the nav and the toggle, and the menu is open
+            if (!nav.contains(e.target) && !navToggle.contains(e.target) && nav.classList.contains("active")) {
+              nav.classList.remove("active");
+            }
+          });
+        } else {
+          console.error("Navigation toggle or nav element not found");
+        }
+        
+        // Text array for typing animation
+        const textArray = [
+          "Software Developer",
+          "Data Engineer",
+          "Data Scientist",
+          "Data Analyst",
+          "Machine Learning Engineer"
+        ];
+        
+        // Fixed typing animation function
+        function setupTypingAnimation() {
+  const textElement = document.getElementById("changing-text");
+  if (!textElement) return; // Exit if element doesn't exist
+  
+  let textIndex = 0;
+  let charIndex = 0;
+  let isDeleting = false;
+  let typingDelay = 100;
+  
+  function typeText() {
+    if (!textElement) return; // Additional safety check
+    
+    const currentText = textArray[textIndex];
+    
+    if (isDeleting) {
+      // Deleting text
+      textElement.textContent = currentText.substring(0, charIndex - 1);
+      charIndex--;
+      typingDelay = 50; // Faster when deleting
+    } else {
+      // Typing text
+      textElement.textContent = currentText.substring(0, charIndex + 1);
+      charIndex++;
+      typingDelay = 150; // Slower when typing
+    }
+    
+    // If finished typing the full text
+    if (!isDeleting && charIndex === currentText.length) {
+      isDeleting = true;
+      typingDelay = 1500; // Pause at the end
+    } 
+    // If finished deleting the text
+    else if (isDeleting && charIndex === 0) {
+      isDeleting = false;
+      textIndex = (textIndex + 1) % textArray.length; // Move to next text
+      typingDelay = 500; // Pause before typing next text
+    }
+    
+    setTimeout(typeText, typingDelay);
+  }
+  
+  // Start the typing animation
+  setTimeout(typeText, 1000); // Start after 1 second
+}
+
+// Initialize typing animation
+setupTypingAnimation();
+
+// Form submission
+const contactForm = document.getElementById('contactForm');
+if (contactForm) {
+  contactForm.addEventListener('submit', function(e) {
+    // Play submission sound
+    playSound('submit');
+    
+    // Preserve the existing form submission logic
+    e.preventDefault();
+    
+    // Basic form validation
+    const fullName = document.getElementById('fullName').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const subject = document.getElementById('subject').value.trim();
+    const message = document.getElementById('message').value.trim();
+    
+    // Validate email format
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!fullName || !email || !subject || !message) {
+      alert('Please fill in all fields');
+      return;
+    }
+    
+    if (!emailPattern.test(email)) {
+      alert('Please enter a valid email address');
+      return;
+    }
+    
+    // You can add actual form submission code here
+    alert('Thank you for your message! I will get back to you soon.');
+    this.reset();
+  });
+}
+
+// Better scroll spy implementation
+function updateActiveNavLink() {
+  const scrollPosition = window.scrollY;
+  
+  // Get all sections and add a small offset for better detection
+  const offset = 100;
+  const sections = document.querySelectorAll('section');
+  
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop - offset;
+    const sectionBottom = sectionTop + section.offsetHeight;
+    const sectionId = section.getAttribute('id');
+    
+    // Check if current scroll position is within this section
+    if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+      // Remove active class from all links
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${sectionId}`) {
+          link.classList.add('active');
+        }
+      });
+    }
+  });
+}
+
+// Add scroll event listener
+window.addEventListener('scroll', updateActiveNavLink);
+
+// Initialize Skills Chart with Pastel Colors
+function initSkillsChart() {
+  const skillsChartElement = document.getElementById('skillsChart');
+  if (!skillsChartElement) return;
+  
+  const ctx = skillsChartElement.getContext('2d');
+  if (!ctx) return;
+  
+  const skillsChart = new Chart(ctx, {
+    type: 'radar',
+    data: {
+      labels: ['Programming', 'Data Analysis', 'Machine Learning', 'Web Development', 'Database Management', 'Cloud Computing'],
+      datasets: [{
+        label: 'Skill Level',
+        data: [90, 95, 85, 80, 88, 75],
+        backgroundColor: 'rgba(247, 165, 186, 0.2)', // Baby pink with transparency
+        borderColor: 'rgba(247, 165, 186, 1)',       // Baby pink
+        pointBackgroundColor: 'rgba(247, 165, 186, 1)',
+        pointBorderColor: '#fff',
+        pointHoverBackgroundColor: '#fff',
+        pointHoverBorderColor: 'rgba(247, 165, 186, 1)'
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      scales: {
+        r: {
+          angleLines: {
+            display: true,
+            color: 'rgba(169, 198, 191, 0.2)' // Sage green with transparency
+          },
+          suggestedMin: 0,
+          suggestedMax: 100,
+          ticks: {
+            stepSize: 20,
+            backdropColor: 'transparent',
+            color: 'rgba(92, 79, 69, 0.7)' // Text color with transparency
+          },
+          grid: {
+            color: 'rgba(165, 199, 247, 0.2)' // Baby blue with transparency
+          },
+          pointLabels: {
+            font: {
+              size: 14
+            },
+            color: 'rgba(92, 79, 69, 0.9)' // Text color
+          }
+        }
+      },
+      plugins: {
+        legend: {
+          display: false
+        },
+        tooltip: {
+          callbacks: {
+            label: function(context) {
+              return `Proficiency: ${context.raw}/100`;
+            }
+          }
+        }
+      }
+    }
+  });
+}
+
+// Initialize skills chart
+initSkillsChart();
+});
+
+// Cherry blossom animation
+document.addEventListener("DOMContentLoaded", () => {
+ const numPetals = 20; // Adjust the number of petals
+for (let i = 0; i < numPetals; i++) {
+createPetal();
+ }
+function createPetal() {
+const petal = document.createElement("div");
+petal.classList.add("petal");
+document.body.appendChild(petal);
+const startLeft = Math.random() * window.innerWidth;
+const animationDuration = Math.random() * 5 + 5; // Between 5s and 10s
+const delay = Math.random() * 5;
+petal.style.left = `${startLeft}px`;
+petal.style.animationDuration = `${animationDuration}s`;
+petal.style.animationDelay = `-${delay}s`;
+setTimeout(() => {
+petal.remove();
+createPetal();
+ }, animationDuration * 1000);
+ }
+});
+    </script>
+  </body>
+</html>
