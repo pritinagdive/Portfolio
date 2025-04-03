@@ -24,7 +24,5 @@ Check out the live demo: [Priti Nagdive Portfolio](https://pritinagdive.netlify.
 - AOS (Animate On Scroll) library for animations
 - Font Awesome for icons
 
-## 🚀 Getting Started
-
 ### Prerequisites
 - Web browser (Chrome, Firefox, Safari, etc.)
